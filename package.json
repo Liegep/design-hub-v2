@@ -6,10 +6,18 @@
     "apps/*"
   ],
   "scripts": {
+    "build": "npm run build:web && npm run build:api",
+    "dev": "concurrently \"npm --workspace @design-hub-v2/web run dev\" \"npm --workspace @design-hub-v2/api run dev\"",
     "dev:api": "npm --workspace @design-hub-v2/api run dev",
     "dev:web": "npm --workspace @design-hub-v2/web run dev",
     "build:api": "npm --workspace @design-hub-v2/api run build",
     "build:web": "npm --workspace @design-hub-v2/web run build",
     "start:api": "npm --workspace @design-hub-v2/api run start"
+  },
+  "dependencies": {
+    "@fastify/static": "^10.1.3"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.5"
   }
 }
